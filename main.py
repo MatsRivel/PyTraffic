@@ -31,6 +31,6 @@ def main():
     # agents.append(Agent(i,Coord(N_ACTORS*10,0),world_size=WORLD_SIZE,step_noise_function=noise))
     AM = AnimationManager(WORLD_SIZE,agents)
     AM.runAnimation()
-
+# 
 if __name__ == '__main__':
     main()
