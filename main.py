@@ -13,17 +13,17 @@ def noise(speed:float)->float:
 def noise_and_speed(speed:float)->float:
     if speed == 0:
         speed = 1
-        if random.random() > 0.95:
-            return speed * 0.1
+        if random.random() > 0.5:
+            return speed * 0.8
     return noise(speed)
 
 def main():
     WORLD_SIZE:Final[int] = 1000
-    N_ACTORS: Final[int] = 4
+    N_ACTORS: Final[int] = 2
     agents = []
     for i in range(0,N_ACTORS):
         if i == 0:
-            agent = Agent( i ,Coord(-i*10,0),world_size=WORLD_SIZE, step_noise_function=noise_and_speed,color="r")
+            agent = Agent( i ,Coord(-i*10,0),world_size=WORLD_SIZE, step_noise_function=noise_and_speed)
         else:
             agent = Agent(i,Coord(-i*10,0),world_size=WORLD_SIZE,step_noise_function=noise)
         agents.append(agent)
